@@ -12,6 +12,7 @@ struct server{
     socklen_t client_address_length;
 };
 
+int server_create(struct server *srv);
 int server_start(struct server *srv, int port);
 int server_listen(struct server *srv);
 int server_accept(struct server *srv);
