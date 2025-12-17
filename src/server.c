@@ -41,7 +41,13 @@ int server_listen(struct server *srv){
 }
 
 int server_accept(struct server *srv){
-    
+    socklen_t addr_len = sizeof(srv->client_address); // Length of client address
+    srv->client_fd = accept(srv->listen_fd, (struct sockaddr *)&srv->client_address, &addr_len); // Accept a client connection
+    if (srv->client_fd < 0) {
+        perror("Accept failed -_-");
+        return -1;
+    }
+    return 0;
 }
 
 int handle_connection(struct server *srv){
