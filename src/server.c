@@ -20,7 +20,16 @@ int server_create(struct server *srv){
 }
 
 int server_start(struct server *srv, int port){
-
+    srv->serv_address.sin_port = htons(port); // Set port
+    int reuse_port = 1;
+    setsockopt(srv->listen_fd, SOL_SOCKET, SO_REUSEADDR, &reuse_port, sizeof(reuse_port)); // Allow quick port reuse
+    
+    if (bind(srv->listen_fd, (struct sockaddr *)&srv->serv_address, sizeof(srv->serv_address)) < 0) {
+        perror("Bind failed -_-");
+        return -1;
+    }
+    
+    return 0;
 }
 
 int server_listen(struct server *srv){
