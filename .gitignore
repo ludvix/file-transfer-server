@@ -1,0 +1,19 @@
+# Compiled object files
+*.o
+
+# Executable
+app
+app.exe
+
+.vscode/
+
+# Bear file
+compile_commands.json
+
+# OS-files -> Windows / Mac
+.DS_Store
+Thumbs.db
+
+#
+.cache/
+/.cache/
