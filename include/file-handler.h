@@ -1,6 +1,8 @@
 #ifndef FILE_HANDLER_H
 #define FILE_HANDLER_H
 
-void file_handler(void);
+#include "server.h"
+
+int send_file(struct server *srv, const char *filename);
 
 #endif
