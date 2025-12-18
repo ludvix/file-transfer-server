@@ -67,7 +67,11 @@ int handle_connection(struct server *srv){
     } 
 }
 
-
 void server_close(struct server *srv){
-
+    if (srv->client_fd >= 0) {
+        close(srv->client_fd);
+    }
+    if (srv->listen_fd >= 0) {
+        close(srv->listen_fd);
+    }
 }
