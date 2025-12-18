@@ -51,7 +51,7 @@ int server_accept(struct server *srv){
 }
 
 int handle_connection(struct server *srv){
-
+    
 }
 
 void server_close(struct server *srv){
