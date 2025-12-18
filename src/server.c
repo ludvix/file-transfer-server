@@ -67,6 +67,12 @@ int handle_connection(struct server *srv){
         buffer[bytes_read] = '\0';   // Null-terminate and print the received filename
         printf("Received filename: %s\n", buffer);
     } 
+
+    if (send_file(srv, buffer) < 0) { // Send the requested file
+        return -1;
+    }
+
+    return 0;
 }
 
 void server_close(struct server *srv){
