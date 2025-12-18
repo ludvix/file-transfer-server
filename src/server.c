@@ -51,7 +51,13 @@ int server_accept(struct server *srv){
 }
 
 int handle_connection(struct server *srv){
-    
+    // Client send request filename to server
+    char buffer[1024];
+    ssize_t bytes_read = read(srv->client_fd, buffer, sizeof(buffer) - 1);
+    if (bytes_read < 0) {
+        perror("Read failed -_-");
+        return -1;  
+    }
 }
 
 void server_close(struct server *srv){
