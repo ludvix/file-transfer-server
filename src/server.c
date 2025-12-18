@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
 
 int server_create(struct server *srv){
     srv->listen_fd = socket(AF_INET, SOCK_STREAM, 0); // TCP socket
