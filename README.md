@@ -6,30 +6,31 @@ The server listens for client connections, receives a filename request from a cl
 --- 
 
 ### HTTPS
-
+```bash
 git clone https://github.com/ludvix/file-transfer-server.git
 
 cd file-transfer-client
-
+```
 ---
 
 ### Setup Linux / WSL
-
+```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt install build-essential
-
+```
 ***Optional***
+```bash
 sudo apt install bear
 bear -- make
-
+```
 ---
 
 ### Use make to recompile easily
-
+```bash
 make 
 make clean # optional
-
+```
 ---
 
 ### How works?
@@ -47,9 +48,9 @@ make clean # optional
 ### To test the server
 
 ***Start Server***
-
+```bash
 ./app
-
+```
 ***Connect using a client***
 
 1. Using my file-transfer-client at: https://github.com/ludvix/file-transfer-client 
@@ -61,21 +62,21 @@ Server should output (File transfer complete!)
 ---
 
 ### Setup macOS
-
+```bash
 xcode-select --install
-
+```
 ***Optional***
-
+```bash
 brew install bear 
 bear -- make
-
+```
 ---
 
 ### Use make to recompile easily
-
+```bash
 make
 make clean # optional
-
+```
 --- 
 
 ### How works?
@@ -93,9 +94,9 @@ make clean # optional
 ### To test the server
 
 ***Start Server***
-
+```bash
 ./app
-
+```
 ***Connect using a client***
 
 1. Using my file-transfer-client at: https://github.com/ludvix/file-transfer-client 
